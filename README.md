@@ -88,9 +88,38 @@ The numerical experiments in the note are organised into eight notebooks:
 Beyond the notebooks, the repository also contains:
 
 * [`Conv_Intersection.py`](Conv_Intersection.py) A **Python module** for evaluating $E_\varepsilon$ as a radial function, intended for use in nonlocal PDE solvers and error–analysis experiments.
-* [`Conv_Intersection.m`](Conv_Intersection.m) A **Matlab implementation** of the same radial evaluation, mirroring the Python interface for ease of integration into existing Matlab workflows.
+* [`Conv_Disc_Intersection.m`](Conv_Intersection.m) A **Matlab implementation** of the same radial evaluation, mirroring the Python interface for ease of integration into existing Matlab workflows.
 
 These radial routines are the ones referred to at the end of the note and are suitable for direct use in applications once the parameters $\varepsilon$ and the radius $a = |x|$ are specified.
+
+To run the latter, you can test
+```
+% Restricted-range example for E_np
+% a ∈ [1-2ε, 1+2ε], ε = 1e-2
+
+epsilon = 1e-2;
+
+% Dense sampling near the transition
+a = linspace(1 - 2*epsilon, 1 + 2*epsilon, 1e4);
+
+% Exact version
+E_exact = Conv_Disc_Intersection(a, epsilon, false);
+
+% Asymptotic version (optional, to compare)
+E_asymp = Conv_Disc_Intersection(a, epsilon, true);
+
+% Plot
+figure;
+plot(a, E_exact, 'LineWidth', 1.5); hold on;
+plot(a, E_asymp, '--', 'LineWidth', 1.2);
+xlabel('a');
+ylabel(sprintf('E(a; \\epsilon = %.0e)', epsilon));
+title('E\_np near a \approx 1 \pm \epsilon');
+legend('Exact', 'Asymptotic', 'Location', 'best');
+grid on;
+```
+
+
 
 ---
 
