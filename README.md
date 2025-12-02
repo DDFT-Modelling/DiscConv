@@ -1,5 +1,5 @@
 # DiscConv
-Newtonian potential of the indicator function of a disc intersection $● = \mathrm{B}[0;1]\cap \mathrm{B}[x;\varepsilon]$
+Newtonian potential of the indicator function of a disc intersection $● := \mathrm{B}[0;1]\cap \mathrm{B}[x;\varepsilon]$
 
 ### How do I run tests? ###
  
@@ -56,7 +56,7 @@ The numerical experiments in the note are organised into eight notebooks:
 
 4. [`4 - Tests H - Branch 1.ipynb`](4%20-%20Tests%20H%20-%20Branch%201.ipynb)
    High–precision tests for the reparametrised quantity $H(\lambda,\varepsilon)$ on the branch
-   $ a^2 \leq 1 + \varepsilon^2$,
+   $a^2 \leq 1 + \varepsilon^2$,
    corresponding to one geometric regime in Lemma 4.
 
    * Evaluates (H) and its asymptotic expansion in extended precision.
@@ -75,7 +75,7 @@ The numerical experiments in the note are organised into eight notebooks:
    Computes $G$ in extended precision for the particular pairs $(a,\Phi(\varphi_\varepsilon(a)))$, $(a,\Phi(\alpha))$, and $(a,\Phi(\varphi_\varepsilon(a)+pi))$ focusing on their relevant branches. Particular care is given on the special point $a = 1$, where the two branches of $F_\varepsilon$ meet. Additionally, all tests are validated using extended-precision quadrature.
 
 9. [`8 - E - High double.ipynb`](8%20-%20E%20-%20High%20double.ipynb)
-   Double–precision implementation of the full convolution $E_\varepsilon = K \ast \mathbf{1}_{●}$ using the asymptotic information on $F_\varepsilon$.
+   Double–precision implementation of the full convolution $E_\varepsilon$ using the asymptotic information on $F_\varepsilon$.
 
    * For $\varepsilon \leq 10^{-5}$, replaces direct evaluation of $F_\varepsilon$ by the leading asymptotic contribution given by $h_1^{(1)}$.
    * Reproduces the high–precision plots of Figure 5 (scaled by $\varepsilon^2 \log \varepsilon^2$) down to $\varepsilon = 10^{-30}$.
