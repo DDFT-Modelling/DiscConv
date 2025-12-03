@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1108516148.svg)](https://doi.org/10.5281/zenodo.17807157)
+
 # DiscConv
 Newtonian potential of the indicator function of a disc intersection $● := \mathrm{B}[0;1]\cap \mathrm{B}[x;\varepsilon]$
 
